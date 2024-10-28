@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    {% load static %}
+
+    <link rel="stylesheet" href="{% static 'css/inscription.css' %}">
+
+    <title></title>
+</head>
+
+<body>
+<section>     
+    <div class="container">
+     <div class="contactInfo">
+        <div>
+                <h2>Contact Info</h2>
+                <ul class="info">
+                  <li>
+                    <span><img src="{% static 'img/location.png' %}"></span>
+                    <span>Maroc</span>                
+                  </li> 
+                  <li>
+                    <span><img src="{% static 'img/mail.png' %}"></span>
+                    <span>LifeSaver@gmail.com</span>                
+                  </li>  
+                  <li>
+                    <span><img src="{% static 'img/call.png' %}"></span>
+                    <span>06.07.70.58.54</span>                
+                  </li>                  
+                </ul>              
+            </div>
+             <ul class="sci">
+                <li><a href="#"><img  src="{% static 'img/1.png' %}"></a></li>
+                <li><a href="#"><img  src="{% static 'img/2.png' %}"></a></li>
+                <li><a href="#"><img  src="{% static 'img/3.png' %}"></a></li>
+                <li><a href="#"><img  src="{% static 'img/4.png' %}"></a></li>
+                <li><a href="#"><img  src="{% static 'img/5.png' %}"></a></li>
+             </ul> 
+           </div>
+             <div class="contactForm">
+             <h2>Sign Up</h2>
+            <h4>Enter your personal details to use all of site features.</h4>
+            <div class="formBox">
+            <div class="inputBox w50">
+
+              <form method="POST" action="{% url 'signup' %}" >
+                {% csrf_token %}
+                  <div class="inputBox w50">
+                      <label>CIN</label>
+                      <input type="text" name="cin" id="cin" placeholder="CIN" required>
+                  </div>
+                  <div class="inputBox w50">
+                      <label>Nom</label>
+                      <input type="text" name="nom" id="nom" placeholder="Nom" required>
+                  </div>
+                  <div class="inputBox w50">
+                      <label>Prénom</label>
+                      <input type="text" name="prenom" id="prenom" placeholder="Prénom" required>
+                  </div> 
+                  <div class="inputBox w50">
+                      <label>Age</label>
+                      <input type="text" name="age" id="age" placeholder="Age" required>
+                  </div>
+                  <div class="inputBox w50">
+                      <label>Adresse</label>
+                      <input type="text" name="adresse" id="adresse" placeholder="Adresse" required>
+                  </div>
+                  <div class="inputBox w50">
+                      <label>Tél</label>
+                      <input type="text" name="télé" id="télé" placeholder="Tél" required>
+                  </div>
+
+                  <div class="inputBox w50">
+                      <label>Email</label>
+                      <input type="email" name="email" id="email" placeholder="Email" required>
+                  </div>
+                  <div class="inputBox w50">
+                      <label>Password</label>            
+                      <input type="password" name="password" id="password" placeholder="Password" required>
+                  </div>
+                  <div class="inputBox w100">
+                      <button type="submit"  class="btn btn-primary mb-3">Sign Up</button>
+                      <button type="button"  class="btn btn-primary mb-3"><a href="/login/">Log In</a></button>
+                  </div>
+              </form>
+           </div>
+        </div>
+        </div>
+    </section>
+</body>
+
+
+</html>

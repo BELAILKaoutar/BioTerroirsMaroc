@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+</head>
+<body>
+
+     <div class="container" id="container">
+
+        <div class="form-container sign-in">
+            <form   method="post" action="{% url 'login_view' %}">
+                {% csrf_token %}
+                <h1>Sign In</h1>
+                <span>or use your email password</span>
+                <input type="email" name="email"  id="email" required="Email"  ><br>
+                <input type="password" name="password" id="password" required="Password"><br>
+                <a href="#">Forget Your Password?</a>
+                <button type="submit" name='submit'>Sign In</button>
+            </form>
+        </div>
+
+    </div>
+
+</body>
+</html>
